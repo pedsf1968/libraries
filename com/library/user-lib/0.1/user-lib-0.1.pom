@@ -34,7 +34,8 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/mvn-repo/user-lib.jar</url>
+			<url>file://${project.build.directory}/mvn-repo</url>
+			<!--url>file://${project.build.directory}/mvn-repo/user-lib.jar</url-->
 		</repository>
 	</distributionManagement>
 
@@ -83,6 +84,8 @@
 			<optional>true</optional>
 		</dependency>
 
+
+
 		<!-- ==================================================== STARTER TEST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -107,7 +110,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.1</version>
+				<version>2.8.2</version>
 				<configuration>
 					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
 				</configuration>
